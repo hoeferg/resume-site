@@ -112,6 +112,41 @@ export default function Experience() {
         <h4>Sixth Grade Science Student Teacher</h4>
         <p>December 2019 - May 2020</p>
         <h4>Deer Valley Unified School District, Phoenix, Az</h4>
+        <p>
+          As a student teacher, I worked with the main teaching team to create
+          instructional lesson plans for in person and virtual classes.
+          Developed and taught a variety of teaching techniques. Communicated
+          with both administration and parents of students' progress.
+        </p>
+          <ul>
+            <li>Collaborated closely with colleagues to design comprehensive instructional lesson plans for both in-person and virtual classes, ensuring a seamless learning experience.
+            </li>
+            <li>Employed a diverse range of teaching techniques to engage and support student learning.
+            </li>
+            <li>Maintained open channels of communication with school administration and parents, providing regular updates on students' progress and performance.
+            </li>
+            <li>Facilitated a successful transition of 80% of students to online learning, showcasing adaptability and commitment to student success during challenging times.
+            </li>
+          </ul>
+      </div>
+      <div>
+        <h4>Fifth Grade Science Student Teacher</h4>
+        <p>August 2017 - May 2019 </p>
+        <h4>Mesa Unified School District; Phoenix, Az	</h4>
+        <p>As a student teacher, I set and implement goals to enable students to improve learning. Monitored and increased student success rate using test, class discussions, and projects.
+        </p>
+        <ul>
+          <li>Setting and implementing strategic goals to empower students to improve their learning outcomes.
+          </li>
+          <li>Actively monitoring and enhancing the student success rate through a variety of assessment methods, including tests, class discussions, and projects.
+          </li>
+          <li>Achieving a remarkable 15% increase in science test scores by incorporating captivating demonstrations into the science curriculum, making complex concepts more accessible and engaging for students.
+          </li>
+          <li>Boosting student engagement by introducing an effective class reward system, encouraging active participation and enthusiasm for learning.
+          </li>
+          <li>Redesigning the daily schedule to establish a predictable timeframe, leading to increased student focus and productivity.
+          </li>
+        </ul>
       </div>
     </>
   );
