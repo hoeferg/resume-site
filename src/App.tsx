@@ -11,7 +11,7 @@ import "./index.css"
 
 function App() {
   return (
-    <>
+    <div className="m-10 ">
       <Intro />
       <Contact />
       <CareerProfile />
@@ -20,7 +20,7 @@ function App() {
       <Education />
       <PersonalDevelopment />
       <Languages />
-    </>
+    </div>
   );
 }
 

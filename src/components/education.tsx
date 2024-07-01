@@ -1,6 +1,6 @@
 export default function Education() {
     return (
-        <>
+        <div className="bg-cyan-500">
             <div>
                 <h3>Education</h3>
             </div>
@@ -20,6 +20,6 @@ export default function Education() {
                 </p>
             </div>
         
-        </>
+        </div>
     )
 }

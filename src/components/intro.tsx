@@ -3,7 +3,7 @@
 
 export default function Intro() {
   return (
-    <div>
+    <div className="bg-cyan-700">
       <h1>Gayle Hoefer</h1>
       <img></img>
       <h2>Software Engineer</h2>
