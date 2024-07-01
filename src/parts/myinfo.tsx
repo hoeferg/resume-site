@@ -1,0 +1,1 @@
+//defide code into two parts so that they can be rendered different for desktop and mobile

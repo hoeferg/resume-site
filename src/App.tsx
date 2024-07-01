@@ -11,7 +11,11 @@ import "./index.css"
 
 function App() {
   return (
-    <div className="m-10 ">
+    <div className="m-10 flex flex-col">
+      <div className="order-1 md:order-1">
+      <Intro />
+      <Contact />
+      </div>
       <Intro />
       <Contact />
       <CareerProfile />
