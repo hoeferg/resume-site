@@ -7,6 +7,7 @@ import Skills from "./components/skills";
 import Education from "./components/education";
 import PersonalDevelopment from "./components/personalDevelopment";
 import Languages from "./components/languages";
+import "./index.css"
 
 function App() {
   return (
