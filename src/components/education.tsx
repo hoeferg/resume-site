@@ -1,8 +1,8 @@
 export default function Education() {
     return (
-        <div className="bg-cyan-500">
+        <div className="bg-cyan-500 mt-10">
             <div>
-                <h3>Education</h3>
+                <h3 className="font-bold">Education</h3>
             </div>
             <div>
                 <h4>Full Stack Web Development Certificate 

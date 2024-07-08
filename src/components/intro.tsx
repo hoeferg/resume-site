@@ -3,10 +3,10 @@
 
 export default function Intro() {
   return (
-    <div className="bg-cyan-700">
-      <h1>Gayle Hoefer</h1>
-      <img alt="Gayle Hoefer"></img>
-      <h2>Software Engineer</h2>
+    <div className="bg-cyan-700 mt-10">
+      <h1 className="font-bold">Gayle Hoefer</h1>
+      <img ></img>
+      <h2 className="font-semibold">Software Engineer</h2>
       <button>Download Resume</button>
     </div>
   );

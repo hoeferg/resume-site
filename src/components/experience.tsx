@@ -1,13 +1,13 @@
 export default function Experience() {
   return (
-    <>
+    <div className="m-10">
       <div>
-        <h3>EXPERIENCES</h3>
+        <h3 className="font-bold">EXPERIENCES</h3>
       </div>
       <div>
-        <h4>Chief Information Security Officer, Software Engineer</h4>
-        <p>January 2023 - June 2024</p>
+        <h4 className="font-semibold mt-5">Chief Information Security Officer, Software Engineer</h4>
         <h4>Healthcare Download, Remote Az</h4>
+        <p>January 2023 - June 2024</p>
         <p>
           Software engineer and the first full-time employee hired by the
           company. I've played a pivotal role in developing innovative solutions
@@ -49,9 +49,9 @@ export default function Experience() {
         </ul>
       </div>
       <div>
-        <h4>Sales Associate</h4>
-        <p>May 2022 - August 2022</p>
+        <h4 className="font-semibold mt-5">Sales Associate</h4>
         <h4>Best Buy Outlet Center, Phoenix, Az</h4>
+        <p>May 2022 - August 2022</p>
         <p>
           As a Sales Associate, I effectively communicated the features and
           benefits of major appliances to customers, playing a crucial role in
@@ -74,9 +74,9 @@ export default function Experience() {
         </ul>
       </div>
       <div>
-        <h4>Middle School Science Teacher</h4>
-        <p>August 2020 - May 2022 </p>
+        <h4 className="font-semibold mt-5">Middle School Science Teacher</h4>
         <h4>Pendergast Elementary School District, Phoenix, Az</h4>
+        <p>August 2020 - May 2022 </p>
         <p>
           As an educator, I played a multifaceted role in fostering an enriching
           learning environment. My contributions included:
@@ -109,9 +109,9 @@ export default function Experience() {
         </ul>
       </div>
       <div>
-        <h4>Sixth Grade Science Student Teacher</h4>
-        <p>December 2019 - May 2020</p>
+        <h4 className="font-semibold mt-5">Sixth Grade Science Student Teacher</h4>
         <h4>Deer Valley Unified School District, Phoenix, Az</h4>
+        <p>December 2019 - May 2020</p>
         <p>
           As a student teacher, I worked with the main teaching team to create
           instructional lesson plans for in person and virtual classes.
@@ -130,7 +130,7 @@ export default function Experience() {
           </ul>
       </div>
       <div>
-        <h4>Fifth Grade Science Student Teacher</h4>
+        <h4 className="font-semibold mt-5">Fifth Grade Science Student Teacher</h4>
         <p>August 2017 - May 2019 </p>
         <h4>Mesa Unified School District; Phoenix, Az	</h4>
         <p>As a student teacher, I set and implement goals to enable students to improve learning. Monitored and increased student success rate using test, class discussions, and projects.
@@ -148,6 +148,6 @@ export default function Experience() {
           </li>
         </ul>
       </div>
-    </>
+    </div>
   );
 }

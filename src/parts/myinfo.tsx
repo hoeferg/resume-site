@@ -7,7 +7,7 @@ import Languages from "../components/languages";
 
 export default function MyInfo() {
     return (
-        <div>
+        <div className="text-white bg-cyan-500 ">
             <Intro />
             <Contact />
             <Education />

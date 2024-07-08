@@ -2,12 +2,11 @@ export default function projects() {
   return (
     <>
       <div>
-        <h3>PROJECTS</h3>
+        <h3 className="font-bold mt-10">PROJECTS</h3>
       </div>
 
-      //Olympus
       <div>
-        <h4>Full Stack App Olympus Project</h4>
+        <h4 className="font-semibold mt-5">Full Stack App Olympus Project</h4>
         <a
           href="https://olympus.herokuapp.com/
 "
@@ -25,9 +24,8 @@ export default function projects() {
         </ul>
       </div>
 
-      //E-commerce
       <div>
-        <h4>Front End App E-commerce
+        <h4 className="font-semibold mt-5">Front End App E-commerce
         </h4>
         <a
           href="https://hoeferg.github.io/Ecommerce/
@@ -46,9 +44,8 @@ export default function projects() {
         </ul>
       </div>
 
-      //E-commerce Backend
       <div>
-        <h4>Back End App E-Commerce 
+        <h4 className="font-semibold mt-5">Back End App E-Commerce 
         </h4>
         <a href="https://github.com/hoeferg/e-commerce
 ">Github: https://github.com/hoeferg/e-commerce
