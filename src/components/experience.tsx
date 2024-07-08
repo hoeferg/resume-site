@@ -1,11 +1,11 @@
 export default function Experience() {
   return (
-    <div className="m-10">
+    <div className="mt-10">
       <div>
         <h3 className="font-bold">EXPERIENCES</h3>
       </div>
       <div>
-        <h4 className="font-semibold mt-5">Chief Information Security Officer, Software Engineer</h4>
+        <h4 className="font-semibold">Chief Information Security Officer, Software Engineer</h4>
         <h4>Healthcare Download, Remote Az</h4>
         <p>January 2023 - June 2024</p>
         <p>

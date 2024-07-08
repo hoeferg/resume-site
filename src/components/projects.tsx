@@ -6,7 +6,7 @@ export default function projects() {
       </div>
 
       <div>
-        <h4 className="font-semibold mt-5">Full Stack App Olympus Project</h4>
+        <h4 className="font-semibold">Full Stack App Olympus Project</h4>
         <a
           href="https://olympus.herokuapp.com/
 "

@@ -5,7 +5,7 @@ import "./index.css"
 
 function App() {
   return (
-    <div className="p-10 items-center text-center">
+    <div className="p-10 items-center text-center grid grid-rows-1">
       <MyInfo />
       <Body />
     </div>
