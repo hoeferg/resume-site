@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Progress } from "@/components/ui/progress"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 
 export default function Component() {
   return (
@@ -11,21 +11,23 @@ export default function Component() {
           <div className="w-full md:w-1/3 bg-teal-600 text-white p-6 md:p-8 order-first md:order-last">
             <h1 className="text-2xl font-bold mb-2">Gayle Hoefer</h1>
             <p className="mb-4">Software Engineer</p>
-            <Button className="w-full mb-6 bg-white text-teal-600 hover:bg-teal-100">Download Resume</Button>
-            
+            <Button className="w-full mb-6 bg-white text-teal-600 hover:bg-teal-100">
+              Download Resume
+            </Button>
+
             <div className="mb-6">
               <h2 className="font-bold mb-2">Contact</h2>
               <p>gaylehoefer@gmail.com</p>
               <p>(602) 809-0162</p>
               <p>linkedin-Gayle Hoefer</p>
             </div>
-            
+
             <div className="mb-6">
               <h2 className="font-bold mb-2">Education</h2>
               <p>Full Stack Web Development Certificate</p>
               <p>University of Arizona, Tucson, Az</p>
             </div>
-            
+
             <div className="mb-6">
               <h2 className="font-bold mb-2">PERSONAL DEVELOPMENT</h2>
               <ul>
@@ -35,7 +37,7 @@ export default function Component() {
                 <li>Docker</li>
               </ul>
             </div>
-            
+
             <div>
               <h2 className="font-bold mb-2">LANGUAGES</h2>
               <p>English (Native)</p>
@@ -46,27 +48,100 @@ export default function Component() {
           <div className="w-full md:w-2/3 p-6 md:p-8">
             {/* Career Profile */}
             <section className="mb-6">
-              <h2 className="text-2xl font-bold text-teal-700 mb-4">CAREER PROFILE</h2>
+              <h2 className="text-2xl font-bold text-teal-700 mb-4">
+                CAREER PROFILE
+              </h2>
               <p className="text-gray-700">
-                Full stack web developer with a background in education. Innovative problem-solver passionate about
-                developing web applications; focused on mobile-first design and development. Strengths in creativity, teamwork,
-                and building projects from idealization to execution as shown as working at a startup.
+                Full stack web developer with a background in education.
+                Innovative problem-solver passionate about developing web
+                applications; focused on mobile-first design and development.
+                Strengths in creativity, teamwork, and building projects from
+                idealization to execution as shown as working at a startup.
               </p>
             </section>
 
             {/* Experiences */}
             <section className="mb-6">
-              <h2 className="text-2xl font-bold text-teal-700 mb-4">EXPERIENCES</h2>
+              <h2 className="text-2xl font-bold text-teal-700 mb-4">
+                EXPERIENCES
+              </h2>
+
+              {/* Experiance 1 */}
               <div className="mb-4">
-                <h3 className="text-xl font-semibold">Chief Information Security Officer, Software Engineer</h3>
+                <h3 className="text-xl font-semibold">
+                  Chief Information Security Officer, Software Engineer
+                </h3>
                 <p className="text-gray-600">Healthcare Download, Remote Az</p>
                 <p className="text-gray-600">January 2023 - June 2024</p>
                 <ul className="list-disc list-inside mt-2 text-gray-700">
-                  <li>Software engineer and the first full-time employee hired by the company.</li>
-                  <li>As chief information security officer I created a secure site through end to end encryption while ensuring the company followed HIPPA laws and other healthcare regulations.</li>
+                  <li>
+                  Chief Information Security Officer: Created a secure site with end-to-end encryption, ensuring compliance with HIPAA and other healthcare regulations.
+                  </li>
+                  <li>
+                  First employee hired by company: Played a pivotal role in designing a website and creating the initial database for the site.
+                  </li>
+                  <li>
+                  User Dashboard: Designed, programmed, and rigorously tested a user-friendly dashboard for easy access to healthcare information.
+                  </li>
+                  <li>
+                  VC Presentations: Played a key role in presentations to venture capitalists, showcasing the web application's potential in the health analytics sector.
+                  </li>
+                  <li>Full-Stack Development: Developed both backend and frontend components of the website using technologies such as React, Node.js, Postman, and Sequelize.</li>
+                  <li>
+                  Communication: Provided daily updates on widget creation and server status to managers.
+                  </li>
                 </ul>
               </div>
-              {/* Add more unique job experiences here */}
+
+              {/* Experiance Two */}
+              <div className="mb-4">
+              <h3 className="text-xl font-semibold">
+              Verison Specialist, Sales Associate
+                </h3>
+                <p className="text-gray-600">Best Buy, Phoenix, Az</p>
+                <p className="text-gray-600">May 2022 - August 2022, August 2024 - Current </p>
+                <ul className="list-disc list-inside mt-2 text-gray-700">
+                  <li>Customer Engagement: Effectively communicated the features and benefits of major appliances, playing a crucial role in facilitating sales.</li>
+                  <li>Product Management: Managed the efficient movement of products from storage to the sales floor, ensuring optimal product availability and presentation.</li>
+                  <li>Sales Achievement: Generated $100,000 in product sales within the first month of the store's opening, demonstrating an ability to quickly establish rapport with customers and drive revenue.</li>
+                  <li>Top Sales Performer: Maintained the top-ranking position as the number one salesperson on the sales team for three consecutive months, showcasing sales acumen, product knowledge, and a customer-focused approach.</li>
+                </ul>
+              </div>
+
+              {/* Experiance Three */}
+              <div className="mb-4">
+              <h3 className="text-xl font-semibold">
+              Middle School Science Teacher
+                </h3>
+                <p className="text-gray-600">Pendergast Elementary School District; Phoenix, Az</p>
+                <p className="text-gray-600">August 2020 - May 2022</p>
+                <ul className="list-disc list-inside mt-2 text-gray-700">
+                  <li>Led the integration of technology for seven teachers during the transition to remote learning amid COVID-19.
+                  </li>
+                  <li>Devised a curriculum that not only guided students' learning but also encouraged their active engagement in the educational process. I also took a proactive approach in managing interpersonal relationships among students, ensuring a harmonious and supportive classroom atmosphere.
+                  </li>
+                  <li>Achieved a 25% increase in student comprehension of science by incorporating teamwork projects into the curriculum, enhancing both understanding and collaborative skills.</li>
+                  <li>Pioneered a 3D printing program that made our middle school the most active 3D printing studio in the country, empowering students with practical skills and exposure to cutting-edge technology.</li>
+                </ul>
+              </div>
+
+               {/* Experiance Four */}
+              <div className="mb-4">
+              <h3 className="text-xl font-semibold">
+              Fifth and Sixth Grade Science Student Teacher
+                </h3>
+                <p className="text-gray-600">Deer Valley Unified School District and Mesa Unified School District; Phoenix, Az</p>
+                <p className="text-gray-600">August 2020 - May 2022</p>
+                <ul className="list-disc list-inside mt-2 text-gray-700">
+                  <li>Instructional Planning: Collaborated closely with the main teaching team to design comprehensive lesson plans for both in-person and virtual classes, ensuring a seamless learning experience.
+                  </li>
+                  <li>Diverse Teaching Techniques: Developed and employed a variety of teaching methods to engage and support student learning.
+                  </li>
+                  <li>Communication: Maintained open channels of communication with school administration and parents, providing regular updates on students' progress and performance.</li>
+                  <li>Online Transition: Facilitated a successful transition of 80% of students to online learning, demonstrating adaptability and commitment to student success during challenging times.</li>
+                  <li>Improved Test Scores: Achieved a 15% increase in science test scores by incorporating engaging demonstrations into the curriculum, making complex concepts more accessible.</li>
+                </ul>
+              </div>
             </section>
 
             {/* Projects */}
@@ -91,31 +166,34 @@ export default function Component() {
               <div className="grid md:grid-cols-2 gap-4">
                 <Card>
                   <CardHeader className="bg-teal-500 text-white">
-                    <CardTitle>DNS and Home Monitoring</CardTitle>
+                    <CardTitle>Software</CardTitle>
                   </CardHeader>
                   <CardContent className="pt-4">
                     <ul className="list-disc list-inside space-y-2">
-                      <li>Installed Pi Hole to manage DNS.</li>
-                      <li>Setup Prometheus with Node Exporter and Blackbox Exporter.</li>
-                      <li>Created dashboards in Grafana to visualize ISP health and CPU metrics.</li>
-                      <li>Alert Manager used to notify of problems.</li>
-                      <li>Setup VPN so mobile devices can use Pi Hole.</li>
+                      <li></li>
+                      <li>
+                      </li>
+                      <li>
+                        
+                      </li>
+                      <li></li>
+                      <li></li>
                     </ul>
                   </CardContent>
                 </Card>
                 <Card>
                   <CardHeader className="bg-teal-500 text-white">
-                    <CardTitle>WebDev Profile</CardTitle>
+                    <CardTitle>Security</CardTitle>
                   </CardHeader>
                   <CardContent className="pt-4">
                     <ul className="list-disc list-inside space-y-2">
-                      <li>Devlope Page Sites.</li>
-                      <li>Web Hosting.</li>
-                      <li>Search Engine Optimization.</li>
-                      <li>Google Maps Listings.</li>
-                      <li>Website Analytics.</li>
-                      <li>Web Monitoring.</li>
-                      <li>Marketing.</li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
                     </ul>
                   </CardContent>
                 </Card>
@@ -143,15 +221,17 @@ export default function Component() {
               </h2>
               <div className="space-y-4">
                 {[
-                  { name: "Product Readiness", proficiency: 95 },
-                  { name: "Post Mortem", proficiency: 95 },
-                  { name: "Prometheus & Grafana", proficiency: 90 },
-                  { name: "ELK Stack", proficiency: 95 },
-                  { name: "Python & Flask", proficiency: 85 },
-                  { name: "Linux Administration", proficiency: 70 },
+                  { name: "Node", proficiency: 95 },
+                  { name: "JavaScript", proficiency: 95 },
+                  { name: "Java", proficiency: 90 },
+                  { name: "Python", proficiency: 95 },
+                  { name: "Sequalize", proficiency: 85 },
+                  { name: "API Generation", proficiency: 70 },
                 ].map((skill) => (
                   <div key={skill.name} className="flex items-center">
-                    <span className="w-40 text-sm font-medium text-gray-700">{skill.name}</span>
+                    <span className="w-40 text-sm font-medium text-gray-700">
+                      {skill.name}
+                    </span>
                     <Progress value={skill.proficiency} className="flex-grow" />
                   </div>
                 ))}
@@ -161,5 +241,5 @@ export default function Component() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
