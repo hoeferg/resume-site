@@ -5,13 +5,15 @@ import "./index.css";
 
 function App() {
   return (
-    <div className="bg-gray">
-      <div className="m-10 items-start text-center flex border-2 border-black bg-white">
-        <div className="">
-          <Body />
-        </div>
-        <div className="h-max ml-5 mr-5" >
-          <MyInfo />
+    <div className="bg-gray-100 min-h-screen">
+      <div className="container mx-auto p-4">
+        <div className="flex flex-col-reverse md:flex-row gap-4">
+          <div className="w-full md:w-3/4 bg-white border border-gray-200 rounded-lg shadow">
+            <Body />
+          </div>
+          <div className="w-full md:w-1/4 bg-white border border-gray-200 rounded-lg shadow">
+            <MyInfo />
+          </div>
         </div>
       </div>
     </div>
