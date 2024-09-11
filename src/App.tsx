@@ -37,10 +37,11 @@ export default function Component() {
   return (
     <Card className="max-w-6xl mx-auto my-8 overflow-hidden">
       <CardContent className="p-0">
-        <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row">
           {/* Sidebar - will be on top for mobile */}
-          <div className="w-full md:w-1/4 bg-teal-600 text-white p-6 md:p-8 order-first md:order-last">
-            <div className="mb-10 p-2">
+          <div className="w-full md:w-1/4 bg-teal-600 text-white order-first md:order-last text-center">
+            <div className="bg-teal-800 p-6 md:p-8">
+            <div className="p-2">
               <img 
                 src="/src/images/Gayle.png" 
                 alt="Picture of Gayle Hoefer" 
@@ -68,13 +69,14 @@ export default function Component() {
                   <span className="block sm:inline">Resume downloaded successfully!</span>
                 </div>
               )}
+              </div>
             </div>
 
             <div className="mb-10 p-2">
               <h2 className="font-bold mb-2">Contact</h2>
               <p>gaylehoefer@gmail.com</p>
               <p>(602) 809-0162</p>
-              <p>linkedin-Gayle Hoefer</p>
+              <a href="https://www.linkedin.com/in/gayle-hoefer-61a2a3124/">LinkedIn - Gayle Hoefer</a>
             </div>
 
             <div className="mb-10 p-2">
