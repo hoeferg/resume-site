@@ -1,16 +1,37 @@
+import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
+import { Download } from "lucide-react"
 
 export default function Component() {
-  const handleDownloadResume = () => {
-    const resumeUrl = '/src/resume/GayleHoeferResume.pdf'
-    const link = document.createElement('a')
-    link.href = resumeUrl
-    link.download = 'Gayle_Hoefer_Resume.pdf'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+  const [downloadStatus, setDownloadStatus] = useState<'idle' | 'downloading' | 'success' | 'error'>('idle')
+
+  const handleDownloadResume = async () => {
+    setDownloadStatus('downloading')
+    
+    // Replace this URL with the actual URL of your PDF file
+    const pdfUrl = "/images/GayleHoeferResume.pdf"
+    
+    try {
+      const response = await fetch(pdfUrl)
+      if (!response.ok) throw new Error('Download failed')
+      
+      const blob = await response.blob()
+      const url = window.URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = "GayleHoeferResume.pdf"
+      document.body.appendChild(link)
+      link.click()
+      link.remove()
+      window.URL.revokeObjectURL(url)
+      
+      setDownloadStatus('success')
+    } catch (error) {
+      console.error('Download error:', error)
+      setDownloadStatus('error')
+    }
   }
 
   return (
@@ -18,8 +39,8 @@ export default function Component() {
       <CardContent className="p-0">
         <div className="flex flex-col md:flex-row">
           {/* Sidebar - will be on top for mobile */}
-          <div className="w-full md:w-1/3 bg-teal-600 text-white p-6 md:p-8 order-first md:order-last">
-            <div className="mb-6">
+          <div className="w-full md:w-1/4 bg-teal-600 text-white p-6 md:p-8 order-first md:order-last">
+            <div className="mb-10 p-2">
               <img 
                 src="/src/images/Gayle.png" 
                 alt="Picture of Gayle Hoefer" 
@@ -28,27 +49,49 @@ export default function Component() {
               <h1 className="text-2xl font-bold mb-2">Gayle Hoefer</h1>
               <p className="mb-4">Software Engineer</p>
               <Button 
-                className="w-full mb-6 bg-white text-teal-600 hover:bg-teal-100"
+                className="w-full mb-10 p-2 bg-white text-teal-600 hover:bg-teal-100 flex items-center justify-center"
                 onClick={handleDownloadResume}
+                disabled={downloadStatus === 'downloading'}
               >
-                Download Resume
+                <Download className="h-4 w-4 mr-2" />
+                <span>
+                  {downloadStatus === 'downloading' ? 'Downloading...' : 'Download Resume'}
+                </span>
               </Button>
+              {downloadStatus === 'error' && (
+                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
+                  <span className="block sm:inline">An error occurred while downloading the PDF. Please try again.</span>
+                </div>
+              )}
+              {downloadStatus === 'success' && (
+                <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
+                  <span className="block sm:inline">Resume downloaded successfully!</span>
+                </div>
+              )}
             </div>
 
-            <div className="mb-6">
+            <div className="mb-10 p-2">
               <h2 className="font-bold mb-2">Contact</h2>
               <p>gaylehoefer@gmail.com</p>
               <p>(602) 809-0162</p>
               <p>linkedin-Gayle Hoefer</p>
             </div>
 
-            <div className="mb-6">
+            <div className="mb-10 p-2">
               <h2 className="font-bold mb-2">Education</h2>
               <p>Full Stack Web Development Certificate</p>
               <p>University of Arizona, Tucson, Az</p>
+              <p>2022</p>
             </div>
 
-            <div className="mb-6">
+            <div className="mb-10 p-2">
+              <p>Bachelors of Arts in Education
+              </p>
+              <p>Arizona State University, Tempe, Az</p>
+              <p>2020</p>
+            </div>
+
+            <div className="mb-10 p-2">
               <h2 className="font-bold mb-2">PERSONAL DEVELOPMENT</h2>
               <ul>
                 <li>Java</li>
@@ -65,16 +108,16 @@ export default function Component() {
           </div>
 
           {/* Main Content */}
-          <div className="w-full md:w-2/3 p-6 md:p-8 bg-white">
+          <div className="w-full md:w-3/4 p-6 md:p-8 bg-white">
             {/* Career Profile */}
-            <section className="mb-6">
+            <section className="mb-10 p-2 p-3">
               <h2 className="text-xl font-bold text-teal-700 mb-2 flex items-center">
                 <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
                 CAREER PROFILE
               </h2>
-              <p className="text-gray-700">
+              <p className="text-gray-700 pl-5">
                 Full stack web developer with a background in education. Innovative problem-solver passionate
                 about developing web applications; focused on mobile-first design and development. Strengths in
                 creativity, teamwork, and building projects from idealization to execution as shown as working at a
@@ -83,7 +126,7 @@ export default function Component() {
             </section>
 
             {/* Experiences */}
-            <section className="mb-6">
+            <section className="mb-10 p-2">
               <h2 className="text-xl font-bold text-teal-700 mb-2 flex items-center">
                 <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -94,9 +137,9 @@ export default function Component() {
               {/* Chief Information Security Officer, Software Engineer */}
               <div className="mb-4">
                 <h3 className="text-lg font-semibold">Chief Information Security Officer, Software Engineer</h3>
-                <p className="text-gray-600">Healthcare Download, Remote Az</p>
-                <p className="text-gray-600">January 2023 - June 2024</p>
-                <ul className="list-disc list-inside mt-2 text-gray-700">
+                <p className="text-gray-600 pl-5 pl-5">Healthcare Download, Remote Az</p>
+                <p className="text-gray-600 pl-5 pl-5">January 2023 - June 2024</p>
+                <ul className="list-disc list-inside mt-2 pl-10 text-gray-700 pl-10">
                   <li>Created a secure site with end-to-end encryption, ensuring compliance with HIPAA and other healthcare regulations.</li>
                   <li>First employee hired by company: Played a pivotal role in designing a website and creating the initial database for the site.</li>
                   <li>Designed, programmed, and rigorously tested a user-friendly dashboard for easy access to healthcare information.</li>
@@ -109,9 +152,9 @@ export default function Component() {
               {/* Verison Specialist, Sales Associate */}
               <div className="mb-4">
                 <h3 className="text-lg font-semibold">Verison Specialist, Sales Associate</h3>
-                <p className="text-gray-600">Best Buy, Phoenix, Az</p>
-                <p className="text-gray-600">May 2022 - August 2022, August 2024 - Current</p>
-                <ul className="list-disc list-inside mt-2 text-gray-700">
+                <p className="text-gray-600 pl-5">Best Buy, Phoenix, Az</p>
+                <p className="text-gray-600 pl-5">May 2022 - August 2022, August 2024 - Current</p>
+                <ul className="list-disc list-inside mt-2 text-gray-700 pl-10">
                   <li>Effectively communicated the features and benefits of major appliances, playing a crucial role in facilitating sales.</li>
                   <li>Managed the efficient movement of products from storage to the sales floor, ensuring optimal product availability and presentation.</li>
                   <li>Generated $100,000 in product sales within the first month of the store's opening.</li>
@@ -122,9 +165,9 @@ export default function Component() {
               {/* Middle School Science Teacher */}
               <div className="mb-4">
                 <h3 className="text-lg font-semibold">Middle School Science Teacher</h3>
-                <p className="text-gray-600">Pendergast Elementary School District; Phoenix, Az</p>
-                <p className="text-gray-600">August 2020 - May 2022</p>
-                <ul className="list-disc list-inside mt-2 text-gray-700">
+                <p className="text-gray-600 pl-5">Pendergast Elementary School District; Phoenix, Az</p>
+                <p className="text-gray-600 pl-5">August 2020 - May 2022</p>
+                <ul className="list-disc list-inside mt-2 text-gray-700 pl-10">
                   <li>Led the integration of technology for seven teachers during the transition to remote learning amid COVID-19.</li>
                   <li>Devised a curriculum that not only guided students' learning but also encouraged their active engagement in the educational process.</li>
                   <li>Achieved a 25% increase in student comprehension of science by incorporating teamwork projects into the curriculum.</li>
@@ -134,7 +177,7 @@ export default function Component() {
             </section>
 
             {/* Projects */}
-            <section className="mb-6">
+            <section className="mb-10 p-2">
               <h2 className="text-xl font-bold text-teal-700 mb-2 flex items-center">
                 <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
@@ -146,7 +189,7 @@ export default function Component() {
                   <CardContent className="p-4">
                     <h3 className="font-bold mb-2">Olympus Project</h3>
                     <p><strong>Deployed:</strong> <a href="https://olympus.herokuapp.com/" className="text-blue-600 hover:underline">olympus.herokuapp.com</a></p>
-                    <p><strong>Github:</strong> <a href="https://github.com/hoeferg/Olympus-Project2" className="text-blue-600 hover:underline">Olympus-Project2</a></p>
+                    <p><strong><a href="https://github.com/hoeferg/Olympus-Project2" className="text-blue-600 hover:underline">View the code on Github</a> </strong> </p>
                     <p><strong>Summary:</strong> A quiz game where users answer questions to prevent disaster on the Olympus Space Station</p>
                     <p><strong>Role:</strong> Stripe incorporation, full stack development</p>
                     <p><strong>Tools:</strong> Stripe, MongoDB, React, GraphQL</p>
@@ -156,7 +199,7 @@ export default function Component() {
                   <CardContent className="p-4">
                     <h3 className="font-bold mb-2">E-commerce</h3>
                     <p><strong>Deployed:</strong> <a href="https://hoeferg.github.io/Ecommerce/" className="text-blue-600 hover:underline">hoeferg.github.io/Ecommerce</a></p>
-                    <p><strong>Github:</strong> <a href="https://github.com/hoeferg/Ecommerce" className="text-blue-600 hover:underline">Ecommerce</a></p>
+                    <p><strong><a href="https://github.com/hoeferg/Ecommerce" className="text-blue-600 hover:underline">View the code on Github</a> </strong> </p>
                     <p><strong>Summary:</strong> An ecommerce website that contains sample data analytics for a business</p>
                     <p><strong>Role:</strong> Styled front end and managed quality control</p>
                     <p><strong>Tools:</strong> React, Github Pages, Node, Material UI</p>
@@ -177,13 +220,13 @@ export default function Component() {
                 {[
                   { name: "Node", proficiency: 95 },
                   { name: "JavaScript", proficiency: 95 },
-                  { name: "Java", proficiency: 90 },
-                  { name: "Python", proficiency: 95 },
-                  { name: "Sequalize", proficiency: 85 },
+                  { name: "Sequalize", proficiency: 90 },
+                  { name: "Java", proficiency: 85 },
+                  { name: "Python", proficiency: 70 },
                 ].map((skill) => (
                   <div key={skill.name} className="flex items-center">
                     <span className="w-40 text-sm font-medium text-gray-700">{skill.name}</span>
-                    <Progress value={skill.proficiency} className="flex-grow bg-teal-200" indicatorClassName="bg-teal-600" />
+                    <Progress value={skill.proficiency} className="flex-grow bg-teal-200" />
                   </div>
                 ))}
               </div>
