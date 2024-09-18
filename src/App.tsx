@@ -1,37 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
-// import Resume from "./resume/GayleHoeferResume.pdf"
-//import { Download } from "lucide-react"
 
 export default function Component() {
-  // const [downloadStatus, setDownloadStatus] = useState<'idle' | 'downloading' | 'success' | 'error'>('idle')
-
-  // const handleDownloadResume = async () => {
-  //   setDownloadStatus('downloading')
-
-  //   // Replace this URL with the actual URL of your PDF file
-  //   const pdfUrl = "/images/GayleHoeferResume.pdf"
-
-  //   try {
-  //     const response = await fetch(pdfUrl)
-  //     if (!response.ok) throw new Error('Download failed')
-
-  //     const blob = await response.blob()
-  //     const url = window.URL.createObjectURL(blob)
-  //     const link = document.createElement('a')
-  //     link.href = url
-  //     link.download = "GayleHoeferResume.pdf"
-  //     document.body.appendChild(link)
-  //     link.click()
-  //     link.remove()
-  //     window.URL.revokeObjectURL(url)
-
-  //     setDownloadStatus('success')
-  //   } catch (error) {
-  //     console.error('Download error:', error)
-  //     setDownloadStatus('error')
-  //   }
-  // }
+  
   return (
     <Card className="max-w-6xl mx-auto my-8 overflow-hidden">
       <CardContent className="p-0">
@@ -40,14 +11,16 @@ export default function Component() {
           <div className="w-full md:w-1/4 bg-teal-600 text-white order-first md:order-last text-center">
             <div className="bg-teal-800 p-6 md:p-8">
             <div className="p-2">
-              <a href="/src/resume/Gayle Hoefer most updated Resume (1).pdf"><img 
+              <a href="/src/resume/Gayle Hoefer Resume.pdf"><img 
                 src="/src/images/Gayle.png" 
                 alt="Picture of Gayle Hoefer" 
                 className="w-full h-auto rounded-lg mb-4"
               /></a>
               <h1 className="text-2xl font-bold mb-2">Gayle Hoefer</h1>
               <p className="mb-4">Software Engineer</p>
-              <a type="button" className="btn btn-primary" download>Download Resume</a>
+              <button className="w-full px-4 py-2 text-black text-bold bg-white rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-opacity-50 transition duration-300">
+                <a href="/src/resume/Gayle Hoefer Resume.pdf">Download Resume</a>
+              </button>
               </div>
             </div>
 
@@ -55,6 +28,7 @@ export default function Component() {
               <h2 className="font-bold mb-2">Contact</h2>
               <p>gaylehoefer@gmail.com</p>
               <p>(602) 809-0162</p>
+              <a href="https://github.com/hoeferg">Github</a>
               <a href="https://www.linkedin.com/in/gayle-hoefer-61a2a3124/">LinkedIn - Gayle Hoefer</a>
             </div>
 
@@ -199,11 +173,14 @@ export default function Component() {
               </h2>
               <div className="space-y-4">
                 {[
-                  { name: "Node", proficiency: 95 },
                   { name: "JavaScript", proficiency: 95 },
-                  { name: "Sequalize", proficiency: 90 },
+                  { name: "TypeScript", proficiency: 95 },
                   { name: "Java", proficiency: 85 },
                   { name: "Python", proficiency: 70 },
+                  { name: "Sequalize", proficiency: 90 },
+                  { name: "Transactional Database", proficiency: 60 },
+                  { name: "Node", proficiency: 100 },
+                  { name: "React", proficiency: 97 },
                 ].map((skill) => (
                   <div key={skill.name} className="flex items-center">
                     <span className="w-40 text-sm font-medium text-gray-700">{skill.name}</span>
