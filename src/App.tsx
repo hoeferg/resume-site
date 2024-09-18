@@ -1,39 +1,37 @@
-import { useState } from 'react'
-import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
-import { Download } from "lucide-react"
+// import Resume from "./resume/GayleHoeferResume.pdf"
+//import { Download } from "lucide-react"
 
 export default function Component() {
-  const [downloadStatus, setDownloadStatus] = useState<'idle' | 'downloading' | 'success' | 'error'>('idle')
+  // const [downloadStatus, setDownloadStatus] = useState<'idle' | 'downloading' | 'success' | 'error'>('idle')
 
-  const handleDownloadResume = async () => {
-    setDownloadStatus('downloading')
-    
-    // Replace this URL with the actual URL of your PDF file
-    const pdfUrl = "/images/GayleHoeferResume.pdf"
-    
-    try {
-      const response = await fetch(pdfUrl)
-      if (!response.ok) throw new Error('Download failed')
-      
-      const blob = await response.blob()
-      const url = window.URL.createObjectURL(blob)
-      const link = document.createElement('a')
-      link.href = url
-      link.download = "GayleHoeferResume.pdf"
-      document.body.appendChild(link)
-      link.click()
-      link.remove()
-      window.URL.revokeObjectURL(url)
-      
-      setDownloadStatus('success')
-    } catch (error) {
-      console.error('Download error:', error)
-      setDownloadStatus('error')
-    }
-  }
+  // const handleDownloadResume = async () => {
+  //   setDownloadStatus('downloading')
 
+  //   // Replace this URL with the actual URL of your PDF file
+  //   const pdfUrl = "/images/GayleHoeferResume.pdf"
+
+  //   try {
+  //     const response = await fetch(pdfUrl)
+  //     if (!response.ok) throw new Error('Download failed')
+
+  //     const blob = await response.blob()
+  //     const url = window.URL.createObjectURL(blob)
+  //     const link = document.createElement('a')
+  //     link.href = url
+  //     link.download = "GayleHoeferResume.pdf"
+  //     document.body.appendChild(link)
+  //     link.click()
+  //     link.remove()
+  //     window.URL.revokeObjectURL(url)
+
+  //     setDownloadStatus('success')
+  //   } catch (error) {
+  //     console.error('Download error:', error)
+  //     setDownloadStatus('error')
+  //   }
+  // }
   return (
     <Card className="max-w-6xl mx-auto my-8 overflow-hidden">
       <CardContent className="p-0">
@@ -42,33 +40,14 @@ export default function Component() {
           <div className="w-full md:w-1/4 bg-teal-600 text-white order-first md:order-last text-center">
             <div className="bg-teal-800 p-6 md:p-8">
             <div className="p-2">
-              <img 
+              <a href="/src/resume/Gayle Hoefer most updated Resume (1).pdf"><img 
                 src="/src/images/Gayle.png" 
                 alt="Picture of Gayle Hoefer" 
                 className="w-full h-auto rounded-lg mb-4"
-              />
+              /></a>
               <h1 className="text-2xl font-bold mb-2">Gayle Hoefer</h1>
               <p className="mb-4">Software Engineer</p>
-              <Button 
-                className="w-full mb-10 p-2 bg-white text-teal-600 hover:bg-teal-100 flex items-center justify-center"
-                onClick={handleDownloadResume}
-                disabled={downloadStatus === 'downloading'}
-              >
-                <Download className="h-4 w-4 mr-2" />
-                <span>
-                  {downloadStatus === 'downloading' ? 'Downloading...' : 'Download Resume'}
-                </span>
-              </Button>
-              {downloadStatus === 'error' && (
-                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
-                  <span className="block sm:inline">An error occurred while downloading the PDF. Please try again.</span>
-                </div>
-              )}
-              {downloadStatus === 'success' && (
-                <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
-                  <span className="block sm:inline">Resume downloaded successfully!</span>
-                </div>
-              )}
+              <a type="button" className="btn btn-primary" download>Download Resume</a>
               </div>
             </div>
 
