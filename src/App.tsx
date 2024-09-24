@@ -175,9 +175,10 @@ export default function Component() {
                 {[
                   { name: "JavaScript", proficiency: 95 },
                   { name: "TypeScript", proficiency: 95 },
+                  { name: "Postman", proficiency: 95 },
+                  { name: "Sequalize", proficiency: 90 },
                   { name: "Java", proficiency: 85 },
                   { name: "Python", proficiency: 70 },
-                  { name: "Sequalize", proficiency: 90 },
                   { name: "Transactional Database", proficiency: 60 },
                   { name: "Node", proficiency: 100 },
                   { name: "React", proficiency: 97 },
