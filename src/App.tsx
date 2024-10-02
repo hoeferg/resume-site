@@ -25,7 +25,7 @@ export default function Component() {
             </div>
 
             <div className="mb-10 p-2">
-              <h2 className="font-bold mb-2">Contact</h2>
+              <h2 className="font-bold mb-2 mt-10">Contact</h2>
               <p>gaylehoefer@gmail.com</p>
               <p>(602) 809-0162</p>
               <a href="https://github.com/hoeferg">Github</a>
@@ -104,9 +104,9 @@ export default function Component() {
                 </ul>
               </div>
 
-              {/* Verison Specialist, Sales Associate */}
+              {/* Verizon Specialist, Sales Associate */}
               <div className="mb-4">
-                <h3 className="text-lg font-semibold">Verison Specialist, Sales Associate</h3>
+                <h3 className="text-lg font-semibold">Verizon Specialist, Sales Associate</h3>
                 <p className="text-gray-600 pl-5">Best Buy, Phoenix, Az</p>
                 <p className="text-gray-600 pl-5">May 2022 - August 2022, August 2024 - Current</p>
                 <ul className="list-disc list-inside mt-2 text-gray-700 pl-10">
@@ -176,11 +176,11 @@ export default function Component() {
                   { name: "JavaScript", proficiency: 95 },
                   { name: "TypeScript", proficiency: 95 },
                   { name: "Postman", proficiency: 95 },
-                  { name: "Sequalize", proficiency: 90 },
+                  { name: "Sequelize", proficiency: 90 },
                   { name: "Java", proficiency: 85 },
                   { name: "Python", proficiency: 70 },
                   { name: "Transactional Database", proficiency: 60 },
-                  { name: "Node", proficiency: 100 },
+                  { name: "Node", proficiency: 95 },
                   { name: "React", proficiency: 97 },
                 ].map((skill) => (
                   <div key={skill.name} className="flex items-center">
